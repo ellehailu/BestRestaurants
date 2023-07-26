@@ -1,0 +1,13 @@
+@model BestRestaurants.Models.Restaurant; 
+
+<h4>Add a new restaurant!</h4>
+
+@using (Html.BeginForm()){
+    @Html.LabelFor(model => model.RestaurantName)
+    @Html.TextBoxFor(model => model.RestaurantName)<br>
+    @Html.LabelFor(model => model.RestaurantDescription)
+    @Html.TextBoxFor(model => model.RestaurantDescription)<br>
+    <input type="submit" value="Add new restaurant" />
+}
+
+<p>@Html.ActionLink("show all restaurants", "Index")</p>

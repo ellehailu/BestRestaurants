@@ -1,0 +1,14 @@
+@model BestRestaurants.Models.Restaurant;
+
+<h4>Restaurant Description</h4>
+
+<hr />
+
+<h3>
+    @Html.DisplayNameFor(model => model.RestaurantName) : @Html.DisplayFor(model
+  => model.RestaurantName)<br> @Html.DisplayFor(model =>
+  model.RestaurantDescription)
+</h3>
+
+<p>@Html.ActionLink("got back to list", "Index")</p>
+
