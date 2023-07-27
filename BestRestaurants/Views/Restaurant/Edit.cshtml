@@ -1,0 +1,16 @@
+@model BestRestaurants.Models.Restaurant
+
+<h2> Edit this restaurant: @Html.DisplayFor(model => model.Name)</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(model => model.RestaurantId)
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+    <input type="submit" value="Edit!">
+}   
+
+<p>@Html.ActionLink("Go back to restaurants", "Index")</p>

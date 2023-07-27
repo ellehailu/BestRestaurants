@@ -5,10 +5,12 @@
 <hr />
 
 <h3>
-    @Html.DisplayNameFor(model => model.RestaurantName) : @Html.DisplayFor(model
-  => model.RestaurantName)<br> @Html.DisplayFor(model =>
-  model.RestaurantDescription)
+    @Html.DisplayNameFor(model => model.Name) : @Html.DisplayFor(model
+  => model.Name)<br> @Html.DisplayFor(model =>
+  model.Description)
 </h3>
 
 <p>@Html.ActionLink("got back to list", "Index")</p>
+<p>@Html.ActionLink("Edit information on this restaurant", "Edit", new {id = Model.RestaurantId})</p>
 
+<p>@Html.ActionLink("Delete Item", "Delete", new { id = Model.RestaurantId })</p>

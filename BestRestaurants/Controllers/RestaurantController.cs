@@ -39,6 +39,32 @@ namespace RestaurantController.Controllers
             return View(thisRestaurant);
         }
 
+        public ActionResult Edit(int id)
+        {
+            Restaurant foundRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+            return View(foundRestaurant);
+        }
+
+        [HttpPost]
+        public ActionResult Edit (Restaurant restaurant)
+        {
+        _db.Restaurants.Update(restaurant);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id){
+            Restaurant foundRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+            return View(foundRestaurant);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public ActionResult DeleteConfirmed(int id){
+            Restaurant foundRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+            _db.Restaurants.Remove(foundRestaurant);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
     }
 }

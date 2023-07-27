@@ -7,8 +7,8 @@ namespace BestRestaurants.Models
     public class Restaurant
     {
         public int RestaurantId { get; set; }
-        public string RestaurantName { get; set; }
+        public string Name { get; set; }
 
-        public string RestaurantDescription { get; set; }
+        public string Description { get; set; }
     }
 }

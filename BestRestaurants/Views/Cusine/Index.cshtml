@@ -11,7 +11,7 @@
     @foreach (Cusine cusine in Model)
     {
       <li>
-            @Html.ActionLink($"{cusine.Type}", "Details", new { id = cusine.CusineId})
+            @Html.ActionLink($"{cusine.Name}", "Details", new { id = cusine.CusineId})
       </li>
     }
 </ul>
