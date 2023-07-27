@@ -10,6 +10,10 @@
     @Html.EditorFor(model => model.Name)
     @Html.LabelFor(model => model.Description)
     @Html.EditorFor(model => model.Description)
+
+    @Html.LabelFor(model => model.Cuisine)
+    @Html.DropDownList("CuisineId")
+
     <input type="submit" value="Edit!">
 }   
 

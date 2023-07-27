@@ -1,0 +1,26 @@
+@model BestRestaurants.Models.Cuisine
+@using BestRestaurants.Models
+
+@* List restaurants that offer this cuisine *@
+<h2>Cuisine Details</h2>
+
+<hr />
+<h3>Name: @Html.DisplayFor(model => model.Name)</h3>
+
+@if (@Model.Restaurants.Count == 0)
+{
+    <h3> No restaurants have been added to this cuisine type!</h3>
+}
+else 
+{
+    <h3>Restaurants:</h3>
+    <ul>
+        @foreach (Restaurant restaurant in Model.Restaurants)
+        {
+            <li>@Html.ActionLink($"{restaurant.Name}", "Details", "Restaurant", new { id = restaurant.RestaurantId})</li>
+        }
+    </ul>
+}
+
+<p>@Html.ActionLink("Back to cuisine list", "Index")</p>
+

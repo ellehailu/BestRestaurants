@@ -1,4 +1,5 @@
 @using BestRestaurants.Models;
+@model List<BestRestaurants.Models.Restaurant>;
 
 <h1>Restaurants</h1>
 
@@ -12,10 +13,10 @@
     {
       <li>
             @Html.ActionLink($"{restaurant.Name}", "Details", new { id =
-    restaurant.RestaurantId})
+    restaurant.RestaurantId}) | @restaurant.Cuisine.Name
       </li>
     }
 </ul>
 <p>@Html.ActionLink("Add another restaurant", "Create")</p>
 
-
+<p>@Html.ActionLink("Go Back to Home", "Index", "Home")</p>
